@@ -17,7 +17,10 @@ refresh(callback){
         callback(true);
         console.log('result goes here: ' + true)
       } else {                  //unsuccessful response
-        callback(false)         
+        /* NOTE: React native often reacts strangely to offline uses and as such,
+        it may be necessary to directly set state here rather than to rely on a callback */
+        callback(false)  //OR: this.state.splash = false
+        
         console.log('result goes here: ' + false)
       }
     };
